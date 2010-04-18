@@ -27,9 +27,8 @@
 	return YES;
 }
 -(void)startPicker {
-	GKPeerPickerController*		picker;
-		
-	picker = [[GKPeerPickerController alloc] init]; // note: picker is released in various picker delegate methods when picker use is done.
+	GKPeerPickerController *picker = [[GKPeerPickerController alloc] init]; // note: picker is released in various picker delegate methods when picker use is done.
+    //picker.GKPeerPickerConnectionType = GKPeerPickerConnectionTypeOnline;
 	picker.delegate = self;
 	[picker show]; // show the Peer Picker
 }
@@ -67,16 +66,17 @@
 	// Remember the current peer.
 	//self.gamePeerId = peerID;  // copy
 	
-	// Make sure we have a reference to the game session and it is set up
-    NSLog(@"in peerPickerController didConnectPeer");
-	myGkSession = sess; // retain
-	//self.session.delegate = self; 
-	//[self.session setDataReceiveHandler:self withContext:NULL];
-	
 	// Done with the Peer Picker so dismiss it.
 	[picker dismiss];
 	picker.delegate = nil;
 	[picker autorelease];
+
+	// Make sure we have a reference to the game session and it is set up
+    //NSLog(@"in peerPickerController didConnectPeer");
+	myGkSession = sess; // retain
+	//self.session.delegate = self; 
+	//[self.session setDataReceiveHandler:self withContext:NULL];
+	
 	
 	// Start Multiplayer game by entering a cointoss state to determine who is server/client.
 	//self.gameState = kStateMultiplayerCointoss;
@@ -129,7 +129,7 @@
 		case GKPeerStateConnected:
             // Connection was accepted
             //currentConfPeerID = [peerID retain];
-            session.available = NO;
+            //session.available = NO;
             //sessionState = ConnectionStateConnected;
 			break;				
 		case GKPeerStateDisconnected:
