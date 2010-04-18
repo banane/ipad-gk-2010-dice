@@ -14,6 +14,7 @@
 @synthesize window;
 @synthesize viewController;
 @synthesize myGkSession;
+@synthesize myPeers;
 //@synthesize gameState, peerStatus, gameSession, gamePeerId, lastHeartbeatDate, connectionAlert;
 
 
@@ -46,6 +47,7 @@
     else
         NSLog(@"in peerPickerController sessionForConnectionType: NEARBY");
 	myGkSession = [[GKSession alloc] initWithSessionID:@"DicePad" displayName:nil sessionMode:GKSessionModePeer]; 
+    myGkSession.delegate = self;
     //myGkSession.available = YES;
 	return [myGkSession retain]; // peer picker retains a reference, so autorelease ours so we don't leak.
 }
@@ -65,7 +67,8 @@
 - (void)peerPickerController:(GKPeerPickerController *)picker didConnectPeer:(NSString *)peerID toSession:(GKSession *)sess { 
 	// Remember the current peer.
 	//self.gamePeerId = peerID;  // copy
-	
+	[myPeers addObject:peerID];
+    
 	// Done with the Peer Picker so dismiss it.
 	[picker dismiss];
 	picker.delegate = nil;
@@ -74,6 +77,26 @@
 	// Make sure we have a reference to the game session and it is set up
     //NSLog(@"in peerPickerController didConnectPeer");
 	myGkSession = sess; // retain
+    myGkSession.delegate = self;
+
+    
+    //NSError *error = nil;
+	// try sending a packet on connection:
+    //NSLog(@"TRYING TO SEND DATA.....");
+	//static unsigned char networkPacket[1024];
+	//const unsigned int packetHeaderSize = 2 * sizeof(int); // we have two "ints" for our header	
+    //int *pIntData = (int *)&networkPacket[0];
+    //int length = sizeof(int);
+    //int data = 5;
+    //// header info
+    //pIntData[0] = 1;    // packet #
+    //pIntData[1] = 1;    //packetID;
+    //// copy data in after the header
+    //memcpy( &networkPacket[packetHeaderSize], &data, length ); 
+    //NSData *packet = [NSData dataWithBytes: networkPacket length: (length+8)];
+  	//[myGkSession sendData:packet toPeers:myPeers withDataMode:GKSendDataReliable error:&error];
+        
+    
 	//self.session.delegate = self; 
 	//[self.session setDataReceiveHandler:self withContext:NULL];
 	
@@ -109,12 +132,20 @@
     NSLog(@"in conn request");
 }
     
+/* Asynchronous delivery of data to one or more peers.  Returns YES if delivery started, NO if unable to start sending, and error will be set.  Delivery will be reliable or unreliable as set by mode.
+ */
+- (BOOL)sendData:(NSData *) data toPeers:(NSArray *)peers withDataMode:(GKSendDataMode)mode error:(NSError **)error{
+    NSLog(@"INSIDE: sendData to peers");
+    return YES;
+}
+
+
     
 - (void)session:(GKSession *)session peer:(NSString *)peerID didChangeState:(GKPeerConnectionState)state{
     NSLog(@"in didChangeState");
 	switch (state) { 
 		case GKPeerStateAvailable:
-            [myGkSession connectToPeer:peerID withTimeout:10.0];
+            [myGkSession connectToPeer:peerID withTimeout:100.0];
             // A peer became available by starting app, exiting settings, or ending a call.
 			//if (![peerList containsObject:peerID]) {
 			//	[peerList addObject:peerID]; 
