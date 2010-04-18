@@ -38,6 +38,7 @@
 
     myGkSession = [[GKSession alloc] initWithSessionID:@"DicePad" displayName:nil sessionMode:GKSessionModeServer];
     myGkSession.available = YES;
+    myGkSession.delegate = self;
     NSLog(@"in session beginning");
 //	return [myGkSession retain]; // peer picker retains a reference, so autorelease ours so we don't leak.
     return YES;
@@ -45,9 +46,9 @@
 
 
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID{
+    NSLog(@"in did receive conn from peer, %@", peerID);
     NSError *error = nil;
     [session acceptConnectionFromPeer:peerID error:&error];
-    NSLog(@"in did receive conn from peer, %@", peerID);
 }
 
 - (BOOL)acceptConnectionFromPeer:(NSString *)peerID error:(NSError **)error{	// errors: cancelled, or timeout
@@ -65,14 +66,14 @@
         case GKPeerStateConnected:
             NSLog(@"didChangeState State CONNECTED");
             peerCount++;
-            peerLabel.text = [NSString stringWithFormat:@"The peercount is: %d, peerID is %@",peerCount, peerID];
+            peerLabel.text = [NSString stringWithFormat:@"peer count: %d, peerID: %@",peerCount, peerID];
             // Record the peerID of the other peer.
             // Inform your game that a peer has connected.
             break;
         case GKPeerStateDisconnected:
             NSLog(@"didChangeState State DISCONNECTED");
             peerCount--;
-            peerLabel.text = [NSString stringWithFormat:@"The peercount is: %d, peerID is %@",peerCount, peerID];
+            peerLabel.text = [NSString stringWithFormat:@"peer count: %d, peerID is %@",peerCount, peerID];
             // Inform your game that a peer has left.
             break;
     }
