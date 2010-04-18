@@ -14,7 +14,7 @@
 @interface dicePadAppDelegate : NSObject <UIApplicationDelegate, GKSessionDelegate> {
     UIWindow *window;
     dicePadViewController *viewController;
-    int *peerCount;
+    int *peerCount;     // # of peers connected
     UILabel *peerLabel;
     NSString *currentPeerID;
     NSMutableArray *thePeers;
