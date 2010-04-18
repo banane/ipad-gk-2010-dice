@@ -2,16 +2,16 @@
 {
 	1D3623240D0F684500981E51 /* dicecupAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {976, 454}}";
-			sepNavSelRange = "{640, 0}";
-			sepNavVisRange = "{0, 678}";
+			sepNavIntBoundsRect = "{{0, 0}, {976, 416}}";
+			sepNavSelRange = "{706, 0}";
+			sepNavVisRange = "{0, 763}";
 		};
 	};
 	1D3623250D0F684500981E51 /* dicecupAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {976, 1950}}";
-			sepNavSelRange = "{1822, 0}";
-			sepNavVisRange = "{1071, 1696}";
+			sepNavIntBoundsRect = "{{0, 0}, {976, 2288}}";
+			sepNavSelRange = "{2970, 0}";
+			sepNavVisRange = "{2964, 1239}";
 			sepNavWindowFrame = "{{458, -95}, {1186, 778}}";
 		};
 	};
@@ -23,16 +23,16 @@
 	};
 	28D7ACF60DDB3853001CB0EB /* dicecupViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {976, 464}}";
+			sepNavIntBoundsRect = "{{0, 0}, {976, 379}}";
 			sepNavSelRange = "{255, 0}";
 			sepNavVisRange = "{0, 298}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* dicecupViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1184, 975}}";
-			sepNavSelRange = "{991, 0}";
-			sepNavVisRange = "{937, 758}";
+			sepNavIntBoundsRect = "{{0, 0}, {976, 949}}";
+			sepNavSelRange = "{46, 0}";
+			sepNavVisRange = "{0, 724}";
 			sepNavWindowFrame = "{{73, 9}, {1186, 743}}";
 		};
 	};
@@ -41,6 +41,11 @@
 		activeExecutable = F9F75E1A117A5C9E00D11C30 /* dicecup */;
 		activeSDKPreference = iphonesimulator3.1.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* dicecup */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* dicecup */,
+		);
+		breakpoints = (
+		);
 		codeSenseManager = F9F75E25117A5CBD00D11C30 /* Code sense */;
 		executables = (
 			F9F75E1A117A5C9E00D11C30 /* dicecup */,
@@ -102,7 +107,7 @@
 					758,
 					60,
 					20,
-					48.16259765625,
+					48,
 					43,
 					43,
 				);
@@ -116,17 +121,17 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 293268005;
-			PBXWorkspaceStateSaveDate = 293268005;
+			PBXPerProjectTemplateStateSaveDate = 293310429;
+			PBXWorkspaceStateSaveDate = 293310429;
 		};
 		perUserProjectItems = {
-			F9F76113117AB93C00D11C30 /* PBXTextBookmark */ = F9F76113117AB93C00D11C30 /* PBXTextBookmark */;
-			F9F76114117AB93C00D11C30 /* PBXTextBookmark */ = F9F76114117AB93C00D11C30 /* PBXTextBookmark */;
-			F9F76115117AB93C00D11C30 /* PBXTextBookmark */ = F9F76115117AB93C00D11C30 /* PBXTextBookmark */;
-			F9F76117117AB93C00D11C30 /* PBXTextBookmark */ = F9F76117117AB93C00D11C30 /* PBXTextBookmark */;
-			F9F7616F117AD75C00D11C30 /* PBXTextBookmark */ = F9F7616F117AD75C00D11C30 /* PBXTextBookmark */;
-			F9F761CC117AE0D000D11C30 /* PBXTextBookmark */ = F9F761CC117AE0D000D11C30 /* PBXTextBookmark */;
-			F9F76244117B714400D11C30 /* PBXTextBookmark */ = F9F76244117B714400D11C30 /* PBXTextBookmark */;
+			F9FD7B4A117B8E0900AE806F /* PBXBookmark */ = F9FD7B4A117B8E0900AE806F /* PBXBookmark */;
+			F9FD7BE7117B9CA700AE806F /* PBXTextBookmark */ = F9FD7BE7117B9CA700AE806F /* PBXTextBookmark */;
+			F9FD7BED117B9D0E00AE806F /* PBXTextBookmark */ = F9FD7BED117B9D0E00AE806F /* PBXTextBookmark */;
+			F9FD7C1D117BA5A300AE806F /* PBXTextBookmark */ = F9FD7C1D117BA5A300AE806F /* PBXTextBookmark */;
+			F9FD7C1E117BA5A300AE806F /* PBXTextBookmark */ = F9FD7C1E117BA5A300AE806F /* PBXTextBookmark */;
+			F9FD7C1F117BA5A300AE806F /* PBXTextBookmark */ = F9FD7C1F117BA5A300AE806F /* PBXTextBookmark */;
+			F9FD7C30117BA6A200AE806F /* PBXTextBookmark */ = F9FD7C30117BA6A200AE806F /* PBXTextBookmark */;
 		};
 		sourceControlManager = F9F75E24117A5CBD00D11C30 /* Source Control */;
 		userBuildSettings = {
@@ -139,7 +144,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -161,6 +166,8 @@
 		showTypeColumn = 0;
 		sourceDirectories = (
 		);
+		variableFormatDictionary = {
+		};
 	};
 	F9F75E24117A5CBD00D11C30 /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -176,7 +183,23 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	F9F76113117AB93C00D11C30 /* PBXTextBookmark */ = {
+	F9FD7B4A117B8E0900AE806F /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 9599CE9A117B83ED00A961FC /* Icon.png */;
+	};
+	F9FD7BE6117B9CA700AE806F /* GKSession.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = GKSession.h;
+		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.3.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKSession.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {976, 1963}}";
+			sepNavSelRange = "{4470, 320}";
+			sepNavVisRange = "{4116, 1481}";
+		};
+	};
+	F9FD7BE7117B9CA700AE806F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF60DDB3853001CB0EB /* dicecupViewController.h */;
 		name = "dicecupViewController.h: 14";
@@ -186,78 +209,54 @@
 		vrLen = 298;
 		vrLoc = 0;
 	};
-	F9F76114117AB93C00D11C30 /* PBXTextBookmark */ = {
+	F9FD7BED117B9D0E00AE806F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* dicecupAppDelegate.h */;
+		name = "dicecupAppDelegate.h: 25";
+		rLen = 0;
+		rLoc = 706;
+		rType = 0;
+		vrLen = 763;
+		vrLoc = 0;
+	};
+	F9FD7C1D117BA5A300AE806F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* dicecupViewController.m */;
 		name = "dicecupViewController.m: 5";
 		rLen = 0;
 		rLoc = 46;
 		rType = 0;
-		vrLen = 840;
+		vrLen = 724;
 		vrLoc = 0;
 	};
-	F9F76115117AB93C00D11C30 /* PBXTextBookmark */ = {
+	F9FD7C1E117BA5A300AE806F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = F9F76116117AB93C00D11C30 /* GKPeerPickerController.h */;
-		name = "GKPeerPickerController.h: 37";
-		rLen = 128;
-		rLoc = 1273;
+		fRef = F9FD7BE6117B9CA700AE806F /* GKSession.h */;
+		name = "GKSession.h: 104";
+		rLen = 320;
+		rLoc = 4470;
 		rType = 0;
-		vrLen = 2062;
-		vrLoc = 1734;
+		vrLen = 1481;
+		vrLoc = 4116;
 	};
-	F9F76116117AB93C00D11C30 /* GKPeerPickerController.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = GKPeerPickerController.h;
-		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.3.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKPeerPickerController.h;
-		sourceTree = "<absolute>";
-	};
-	F9F76117117AB93C00D11C30 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F9F76118117AB93C00D11C30 /* GKSession.h */;
-		name = "GKSession.h: 52";
-		rLen = 106;
-		rLoc = 2129;
-		rType = 0;
-		vrLen = 1708;
-		vrLoc = 910;
-	};
-	F9F76118117AB93C00D11C30 /* GKSession.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = GKSession.h;
-		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.3.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKSession.h;
-		sourceTree = "<absolute>";
-	};
-	F9F7616F117AD75C00D11C30 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* dicecupAppDelegate.h */;
-		name = "dicecupAppDelegate.h: 23";
-		rLen = 0;
-		rLoc = 640;
-		rType = 0;
-		vrLen = 678;
-		vrLoc = 0;
-	};
-	F9F761CC117AE0D000D11C30 /* PBXTextBookmark */ = {
+	F9FD7C1F117BA5A300AE806F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1D3623250D0F684500981E51 /* dicecupAppDelegate.m */;
-		name = "dicecupAppDelegate.m: 48";
+		name = "dicecupAppDelegate.m: 82";
 		rLen = 0;
-		rLoc = 1654;
+		rLoc = 3703;
 		rType = 0;
-		vrLen = 1653;
-		vrLoc = 1112;
+		vrLen = 1066;
+		vrLoc = 2719;
 	};
-	F9F76244117B714400D11C30 /* PBXTextBookmark */ = {
+	F9FD7C30117BA6A200AE806F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1D3623250D0F684500981E51 /* dicecupAppDelegate.m */;
-		name = "dicecupAppDelegate.m: 51";
+		name = "dicecupAppDelegate.m: 83";
 		rLen = 0;
-		rLoc = 1822;
+		rLoc = 2970;
 		rType = 0;
-		vrLen = 1696;
-		vrLoc = 1071;
+		vrLen = 1239;
+		vrLoc = 2964;
 	};
 }
