@@ -19,6 +19,7 @@
     NSString *currentPeerID;
     NSMutableArray *thePeers;
     GKSession *myGkSession;
+	UIImageView *diceImageView;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -28,6 +29,9 @@
 @property (nonatomic, retain) NSString *currentPeerID;
 @property (nonatomic) int peerCount;
 @property (nonatomic, retain) GKSession *myGkSession;
+@property (nonatomic, retain) IBOutlet UIImageView *diceImageView;
+
+-(void)animateDice;
 
 @end
 
