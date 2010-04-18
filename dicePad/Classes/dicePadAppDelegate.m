@@ -23,14 +23,16 @@
 
     peerCount = 0;
     
-    CGRect frame = CGRectMake(10,10, 300,300);
+    CGRect frame = CGRectMake(150,200, 450,450);
     peerLabel = [[UILabel alloc] initWithFrame:frame];
+	[peerLabel setFont:[UIFont fontWithName:@"Arial" size:36]];
+	[peerLabel setBackgroundColor:[UIColor greenColor]];
     peerLabel.text = [NSString stringWithFormat:@"The peer count is: %d",peerCount];
     [viewController.view addSubview:peerLabel];
     
     
     // Override point for customization after app launch  
-    [viewController.view setBackgroundColor:[UIColor redColor]];
+    [viewController.view setBackgroundColor:[UIColor greenColor]];
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
 
