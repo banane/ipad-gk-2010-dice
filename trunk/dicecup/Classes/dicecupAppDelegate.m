@@ -19,8 +19,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-        
-//	[viewController.view setBackgroundImage:[UIImage imageNamed:@"dicecup.png"]];
+		
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
     [self startPicker];
