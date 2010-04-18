@@ -1,0 +1,11 @@
+43c3b4db9f401afc9e72f4c81bc3a0ae de7157e14c69d5225ecce98e0e0cd9ee ffffffffffffffffffffffffffffffff 238 /Users/stacie/dev/ipad/dice1/build/Debug-iphonesimulator/dice1.app
+000000004bca088b0000000000003ed9 343b71f3b8dac0ef69a794bc4fff39ef ffffffffffffffffffffffffffffffff 769 /Users/stacie/dev/ipad/dice1/build/Debug-iphonesimulator/dice1.app/dice1ViewController.nib
+000000004bca088b0000000000004cf5 e580322b9822d58018899c90894d5705 ffffffffffffffffffffffffffffffff 1113 /Users/stacie/dev/ipad/dice1/build/Debug-iphonesimulator/dice1.app/MainWindow.nib
+00000000000000000000000000000000 c4b70cb64ed57ef9b20fbe9f05b55401 ffffffffffffffffffffffffffffffff 8 /Users/stacie/dev/ipad/dice1/build/Debug-iphonesimulator/dice1.app/PkgInfo
+00000000000000000000000000000000 c4b70cb64ed57ef9b20fbe9f05b55401 ffffffffffffffffffffffffffffffff 790 /Users/stacie/dev/ipad/dice1/build/Debug-iphonesimulator/dice1.app/Info.plist
+00000000000000000000000000000000 fb98ea40823818ba51b422d64212cd10 ffffffffffffffffffffffffffffffff 102 /Users/stacie/dev/ipad/dice1/build/Debug-iphonesimulator/dice1.app.dSYM
+4c08a15590b77582f70d180ec0d0e134 de7056562f0f7a111851e4ea1da15d5c ffffffffffffffffffffffffffffffff 20284 /Users/stacie/dev/ipad/dice1/build/Debug-iphonesimulator/dice1.app/dice1
+a410d8e4ffb1d725c20aa5c2da70a06d 11c542de46c649f2660f23c13becdc54 ffffffffffffffffffffffffffffffff 45656 /Users/stacie/dev/ipad/dice1/build/dice1.build/Debug-iphonesimulator/dice1.build/Objects-normal/i386/dice1ViewController.o
+a410d8e4b4421233c20aa5c2da70a21b 8b092e5c4560fa4a923d84ed9ddde9c3 ffffffffffffffffffffffffffffffff 45592 /Users/stacie/dev/ipad/dice1/build/dice1.build/Debug-iphonesimulator/dice1.build/Objects-normal/i386/dice1AppDelegate.o
+a410d8e4ffe4ddbfc20aa5c2da70aabb 72d415336cbf883ec1351ae0be81534e ffffffffffffffffffffffffffffffff 5924 /Users/stacie/dev/ipad/dice1/build/dice1.build/Debug-iphonesimulator/dice1.build/Objects-normal/i386/main.o
+000000004bf3dfb10000000000001a69 a410d8e4b47bc069c20aa5c2da70b83c ffffffffffffffffffffffffffffffff 13805456 /var/folders/TJ/TJq2AQorEziAH524fctfKk+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/dice1_Prefix-avtnaybalzfuzoefvcmjivjznyba/dice1_Prefix.pch.gch
