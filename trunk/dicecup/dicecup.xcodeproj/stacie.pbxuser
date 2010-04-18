@@ -1,0 +1,263 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* dicecupAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {976, 454}}";
+			sepNavSelRange = "{640, 0}";
+			sepNavVisRange = "{0, 678}";
+		};
+	};
+	1D3623250D0F684500981E51 /* dicecupAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {976, 1950}}";
+			sepNavSelRange = "{1822, 0}";
+			sepNavVisRange = "{1071, 1696}";
+			sepNavWindowFrame = "{{458, -95}, {1186, 778}}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* dicecup */ = {
+		activeExec = 0;
+		executables = (
+			F9F75E1A117A5C9E00D11C30 /* dicecup */,
+		);
+	};
+	28D7ACF60DDB3853001CB0EB /* dicecupViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {976, 464}}";
+			sepNavSelRange = "{255, 0}";
+			sepNavVisRange = "{0, 298}";
+		};
+	};
+	28D7ACF70DDB3853001CB0EB /* dicecupViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1184, 975}}";
+			sepNavSelRange = "{991, 0}";
+			sepNavVisRange = "{937, 758}";
+			sepNavWindowFrame = "{{73, 9}, {1186, 743}}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = F9F75E1A117A5C9E00D11C30 /* dicecup */;
+		activeSDKPreference = iphonesimulator3.1.3;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* dicecup */;
+		codeSenseManager = F9F75E25117A5CBD00D11C30 /* Code sense */;
+		executables = (
+			F9F75E1A117A5C9E00D11C30 /* dicecup */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					686,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					798,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFindDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					812,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFindDataSource_MessageID,
+					PBXFindDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					758,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 293268005;
+			PBXWorkspaceStateSaveDate = 293268005;
+		};
+		perUserProjectItems = {
+			F9F76113117AB93C00D11C30 /* PBXTextBookmark */ = F9F76113117AB93C00D11C30 /* PBXTextBookmark */;
+			F9F76114117AB93C00D11C30 /* PBXTextBookmark */ = F9F76114117AB93C00D11C30 /* PBXTextBookmark */;
+			F9F76115117AB93C00D11C30 /* PBXTextBookmark */ = F9F76115117AB93C00D11C30 /* PBXTextBookmark */;
+			F9F76117117AB93C00D11C30 /* PBXTextBookmark */ = F9F76117117AB93C00D11C30 /* PBXTextBookmark */;
+			F9F7616F117AD75C00D11C30 /* PBXTextBookmark */ = F9F7616F117AD75C00D11C30 /* PBXTextBookmark */;
+			F9F761CC117AE0D000D11C30 /* PBXTextBookmark */ = F9F761CC117AE0D000D11C30 /* PBXTextBookmark */;
+			F9F76244117B714400D11C30 /* PBXTextBookmark */ = F9F76244117B714400D11C30 /* PBXTextBookmark */;
+		};
+		sourceControlManager = F9F75E24117A5CBD00D11C30 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	F9F75E1A117A5C9E00D11C30 /* dicecup */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = dicecup;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	F9F75E24117A5CBD00D11C30 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	F9F75E25117A5CBD00D11C30 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	F9F76113117AB93C00D11C30 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* dicecupViewController.h */;
+		name = "dicecupViewController.h: 14";
+		rLen = 0;
+		rLoc = 255;
+		rType = 0;
+		vrLen = 298;
+		vrLoc = 0;
+	};
+	F9F76114117AB93C00D11C30 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* dicecupViewController.m */;
+		name = "dicecupViewController.m: 5";
+		rLen = 0;
+		rLoc = 46;
+		rType = 0;
+		vrLen = 840;
+		vrLoc = 0;
+	};
+	F9F76115117AB93C00D11C30 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F9F76116117AB93C00D11C30 /* GKPeerPickerController.h */;
+		name = "GKPeerPickerController.h: 37";
+		rLen = 128;
+		rLoc = 1273;
+		rType = 0;
+		vrLen = 2062;
+		vrLoc = 1734;
+	};
+	F9F76116117AB93C00D11C30 /* GKPeerPickerController.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = GKPeerPickerController.h;
+		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.3.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKPeerPickerController.h;
+		sourceTree = "<absolute>";
+	};
+	F9F76117117AB93C00D11C30 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F9F76118117AB93C00D11C30 /* GKSession.h */;
+		name = "GKSession.h: 52";
+		rLen = 106;
+		rLoc = 2129;
+		rType = 0;
+		vrLen = 1708;
+		vrLoc = 910;
+	};
+	F9F76118117AB93C00D11C30 /* GKSession.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = GKSession.h;
+		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.3.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKSession.h;
+		sourceTree = "<absolute>";
+	};
+	F9F7616F117AD75C00D11C30 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* dicecupAppDelegate.h */;
+		name = "dicecupAppDelegate.h: 23";
+		rLen = 0;
+		rLoc = 640;
+		rType = 0;
+		vrLen = 678;
+		vrLoc = 0;
+	};
+	F9F761CC117AE0D000D11C30 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* dicecupAppDelegate.m */;
+		name = "dicecupAppDelegate.m: 48";
+		rLen = 0;
+		rLoc = 1654;
+		rType = 0;
+		vrLen = 1653;
+		vrLoc = 1112;
+	};
+	F9F76244117B714400D11C30 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* dicecupAppDelegate.m */;
+		name = "dicecupAppDelegate.m: 51";
+		rLen = 0;
+		rLoc = 1822;
+		rType = 0;
+		vrLen = 1696;
+		vrLoc = 1071;
+	};
+}

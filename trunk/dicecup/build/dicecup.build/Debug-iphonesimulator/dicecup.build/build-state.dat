@@ -1,0 +1,268 @@
+Tdicecup
+v7
+r0
+t293268248.905925
+cCheck dependencies
+cProcessInfoPlistFile /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/Info.plist dicecup-Info.plist
+cCompileXIB /Users/stacie/dev/ipad/dicecup/MainWindow.xib
+cCompileXIB /Users/stacie/dev/ipad/dicecup/dicecupViewController.xib
+cProcessPCH /var/folders/TJ/TJq2AQorEziAH524fctfKk+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/dicecup_Prefix-gjknmgsyyqkkrsfhoiehzvqbaqex/dicecup_Prefix.pch.gch dicecup_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/main.o /Users/stacie/dev/ipad/dicecup/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/dicecupAppDelegate.o /Users/stacie/dev/ipad/dicecup/Classes/dicecupAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/dicecupViewController.o /Users/stacie/dev/ipad/dicecup/Classes/dicecupViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/dicecup normal i386
+cGenerateDSYMFile /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app.dSYM /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/dicecup
+cTouch /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk
+c000000004B69B45C00000000000000EE
+t1265218652
+s238
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004B2B4CC3000000000026EE30
+t1261128899
+s2551344
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004B2B4DC8000000000027E880
+t1261129160
+s2615424
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004B2B4DAE0000000000001355
+t1261129134
+s4949
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk/System/Library/Frameworks/GameKit.framework/GameKit
+c000000004B2B635000000000000A82F0
+t1261134672
+s688880
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk/System/Library/Frameworks/GameKit.framework/Headers/GameKit.h
+c000000004B2B633D0000000000000112
+t1261134653
+s274
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004B2B61620000000000000788
+t1261134178
+s1928
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004B2B62B500000000016721E0
+t1261134517
+s23536096
+
+N/Users/stacie/dev/ipad/dicecup/Classes/dicecupAppDelegate.h
+c000000004BCA9F4200000000000002A6
+t1271570242
+s678
+i<UIKit/UIKit.h>
+i<GameKit/GameKit.h>
+
+N/Users/stacie/dev/ipad/dicecup/Classes/dicecupAppDelegate.m
+c000000004BCAA86D0000000000001403
+t1271572589
+s5123
+i"dicecupAppDelegate.h"
+i"dicecupViewController.h"
+
+N/Users/stacie/dev/ipad/dicecup/Classes/dicecupViewController.h
+c000000004BCA6E53000000000000012A
+t1271557715
+s298
+i<UIKit/UIKit.h>
+i<GameKit/GameKit.h>
+
+N/Users/stacie/dev/ipad/dicecup/Classes/dicecupViewController.m
+c000000004BCA687200000000000006A5
+t1271556210
+s1701
+i"dicecupViewController.h"
+
+N/Users/stacie/dev/ipad/dicecup/MainWindow.xib
+c000000004BCA251E000000000000264C
+t1271538974
+s9804
+
+N/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app
+t1271575448
+s238
+
+N/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app.dSYM
+t1271575448
+s102
+
+N/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/Info.plist
+t1271539194
+s593
+
+N/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/MainWindow.nib
+t1271539194
+s1510
+
+N/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/PkgInfo
+t1271539194
+s8
+
+N/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/dicecup
+t1271575448
+s21568
+
+N/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/dicecupViewController.nib
+t1271539285
+s1165
+
+N/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/dicecup.LinkFileList
+c000000004BCA25FA0000000000000175
+t1271539194
+s373
+
+N/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/dicecupAppDelegate.o
+t1271575448
+s46384
+
+N/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/dicecupViewController.o
+t1271562653
+s30700
+
+N/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/main.o
+t1271539196
+s5932
+
+N/Users/stacie/dev/ipad/dicecup/dicecupViewController.xib
+c000000004BCA26500000000000003B12
+t1271539280
+s15122
+
+N/Users/stacie/dev/ipad/dicecup/dicecup_Prefix.pch
+c000000004BCA251E00000000000000B7
+t1271538974
+s183
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/stacie/dev/ipad/dicecup/main.m
+c000000004BCA251E0000000000000163
+t1271538974
+s355
+i<UIKit/UIKit.h>
+
+N/var/folders/TJ/TJq2AQorEziAH524fctfKk+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/dicecup_Prefix-gjknmgsyyqkkrsfhoiehzvqbaqex/dicecup_Prefix.pch.gch
+t1271539195
+s13026768
+
+Ndicecup-Info.plist
+c000000004BCA251E000000000000038D
+t1271538974
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies293268248#293268248#0(0"0(0#1#0"4300911832#0"0#
+
+CCompileC build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/dicecupAppDelegate.o /Users/stacie/dev/ipad/dicecup/Classes/dicecupAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s293268248.121175
+e293268248.604400
+r1
+xCompileC
+xbuild/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/dicecupAppDelegate.o
+x/Users/stacie/dev/ipad/dicecup/Classes/dicecupAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/stacie/dev/ipad/dicecup/Classes/dicecupAppDelegate.m293268248#293268248#0(0"0(0#0#59"/Users/stacie/dev/ipad/dicecup/Classes/dicecupAppDelegate.m4300911832#1807"    cd /Users/stacie/dev/ipad/dicecup    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-generated-files.hmap -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-own-target-headers.hmap -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-all-target-headers.hmap -iquote /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-project-headers.hmap -F/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator -I/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/include -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/DerivedSources/i386 -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/DerivedSources -include /var/folders/TJ/TJq2AQorEziAH524fctfKk+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/dicecup_Prefix-gjknmgsyyqkkrsfhoiehzvqbaqex/dicecup_Prefix.pch -c /Users/stacie/dev/ipad/dicecup/Classes/dicecupAppDelegate.m -o /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/dicecupAppDelegate.o0#
+
+CCompileC build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/dicecupViewController.o /Users/stacie/dev/ipad/dicecup/Classes/dicecupViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s293255453.129377
+e293255453.680625
+r1
+xCompileC
+xbuild/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/dicecupViewController.o
+x/Users/stacie/dev/ipad/dicecup/Classes/dicecupViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@70"Compile /Users/stacie/dev/ipad/dicecup/Classes/dicecupViewController.m293255453#293255453#0(0"0(0#0#62"/Users/stacie/dev/ipad/dicecup/Classes/dicecupViewController.m4300911832#1813"    cd /Users/stacie/dev/ipad/dicecup    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-generated-files.hmap -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-own-target-headers.hmap -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-all-target-headers.hmap -iquote /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-project-headers.hmap -F/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator -I/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/include -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/DerivedSources/i386 -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/DerivedSources -include /var/folders/TJ/TJq2AQorEziAH524fctfKk+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/dicecup_Prefix-gjknmgsyyqkkrsfhoiehzvqbaqex/dicecup_Prefix.pch -c /Users/stacie/dev/ipad/dicecup/Classes/dicecupViewController.m -o /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/dicecupViewController.o0#
+
+CCompileC build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/main.o /Users/stacie/dev/ipad/dicecup/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s293231996.124824
+e293231996.234557
+r1
+xCompileC
+xbuild/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/main.o
+x/Users/stacie/dev/ipad/dicecup/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@45"Compile /Users/stacie/dev/ipad/dicecup/main.m293231996#293231996#0(0"0(0#0#37"/Users/stacie/dev/ipad/dicecup/main.m4300911832#1771"    cd /Users/stacie/dev/ipad/dicecup    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-generated-files.hmap -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-own-target-headers.hmap -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-all-target-headers.hmap -iquote /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-project-headers.hmap -F/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator -I/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/include -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/DerivedSources/i386 -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/DerivedSources -include /var/folders/TJ/TJq2AQorEziAH524fctfKk+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/dicecup_Prefix-gjknmgsyyqkkrsfhoiehzvqbaqex/dicecup_Prefix.pch -c /Users/stacie/dev/ipad/dicecup/main.m -o /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/stacie/dev/ipad/dicecup/MainWindow.xib
+s293231994.445651
+e293231994.976745
+r1
+xCompileXIB
+x/Users/stacie/dev/ipad/dicecup/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib293231994#293231994#0(0"0(0#0#45"/Users/stacie/dev/ipad/dicecup/MainWindow.xib4300911832#458"    cd /Users/stacie/dev/ipad/dicecup    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/MainWindow.nib /Users/stacie/dev/ipad/dicecup/MainWindow.xib0#
+
+CCompileXIB /Users/stacie/dev/ipad/dicecup/dicecupViewController.xib
+s293232084.035255
+e293232085.036710
+r1
+xCompileXIB
+x/Users/stacie/dev/ipad/dicecup/dicecupViewController.xib
+lSLF07#2@36"CompileXIB dicecupViewController.xib293232084#293232085#0(0"0(0#0#56"/Users/stacie/dev/ipad/dicecup/dicecupViewController.xib4300911832#480"    cd /Users/stacie/dev/ipad/dicecup    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/dicecupViewController.nib /Users/stacie/dev/ipad/dicecup/dicecupViewController.xib0#
+
+CGenerateDSYMFile /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app.dSYM /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/dicecup
+s293268248.850086
+e293268248.902592
+r1
+xGenerateDSYMFile
+x/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app.dSYM
+x/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/dicecup
+lSLF07#2@109"GenerateDSYMFile build/Debug-iphonesimulator/dicecup.app.dSYM build/Debug-iphonesimulator/dicecup.app/dicecup293268248#293268248#0(0"0(0#0#78"/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/dicecup4300911832#359"    cd /Users/stacie/dev/ipad/dicecup    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/dicecup -o /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app.dSYM0#
+
+CLd /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/dicecup normal i386
+s293268248.604497
+e293268248.849924
+r1
+xLd
+x/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/dicecup
+xnormal
+xi386
+lSLF07#2@83"Link /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/dicecup293268248#293268248#0(0"0(0#0#0"4300911832#843"    cd /Users/stacie/dev/ipad/dicecup    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk -L/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator -F/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator -filelist /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/Objects-normal/i386/dicecup.LinkFileList -mmacosx-version-min=10.5 -framework Foundation -framework UIKit -framework CoreGraphics -framework GameKit -o /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/dicecup0#
+
+CProcessInfoPlistFile /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/Info.plist dicecup-Info.plist
+s293231994.429436
+e293231994.445547
+r1
+xProcessInfoPlistFile
+x/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/Info.plist
+xdicecup-Info.plist
+lSLF07#2@26"Process dicecup-Info.plist293231994#293231994#0(0"0(0#0#49"/Users/stacie/dev/ipad/dicecup/dicecup-Info.plist4300911832#455"    cd /Users/stacie/dev/ipad/dicecup    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility dicecup-Info.plist -genpkginfo /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app/Info.plist0#
+
+CProcessPCH /var/folders/TJ/TJq2AQorEziAH524fctfKk+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/dicecup_Prefix-gjknmgsyyqkkrsfhoiehzvqbaqex/dicecup_Prefix.pch.gch dicecup_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s293231994.977060
+e293231996.124203
+r1
+xProcessPCH
+x/var/folders/TJ/TJq2AQorEziAH524fctfKk+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/dicecup_Prefix-gjknmgsyyqkkrsfhoiehzvqbaqex/dicecup_Prefix.pch.gch
+xdicecup_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@29"Precompile dicecup_Prefix.pch293231994#293231996#0(0"0(0#0#49"/Users/stacie/dev/ipad/dicecup/dicecup_Prefix.pch4300911832#1671"    cd /Users/stacie/dev/ipad/dicecup    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-generated-files.hmap -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-own-target-headers.hmap -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-all-target-headers.hmap -iquote /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/dicecup-project-headers.hmap -F/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator -I/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/include -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/DerivedSources/i386 -I/Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphonesimulator/dicecup.build/DerivedSources -c /Users/stacie/dev/ipad/dicecup/dicecup_Prefix.pch -o /var/folders/TJ/TJq2AQorEziAH524fctfKk+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/dicecup_Prefix-gjknmgsyyqkkrsfhoiehzvqbaqex/dicecup_Prefix.pch.gch0#
+
+CTouch /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app
+s293268248.902715
+e293268248.905876
+r1
+xTouch
+x/Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app
+lSLF07#2@76"Touch /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app293268248#293268248#0(0"0(0#0#0"4300911832#262"    cd /Users/stacie/dev/ipad/dicecup    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/stacie/dev/ipad/dicecup/build/Debug-iphonesimulator/dicecup.app0#
+

@@ -1,0 +1,15 @@
+23cec2e0b5194f2e0ffa3d027bb8dd3b 873cb2254d6e595dc85cf334db79beaf ffffffffffffffffffffffffffffffff 30328 /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphoneos/dicecup.build/Objects-normal/armv6/dicecupViewController.o
+23cec2e0fed3154e0ffa3d027bb8cba1 71b0df95fceea78c99d653362fda4e3c ffffffffffffffffffffffffffffffff 48756 /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphoneos/dicecup.build/Objects-normal/armv6/dicecupAppDelegate.o
+23cec2e0b5f8084d0ffa3d027bb8dac5 d6393db076f018030001347e68e4f209 ffffffffffffffffffffffffffffffff 6432 /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphoneos/dicecup.build/Objects-normal/armv6/main.o
+00000000000000000000000000000000 1934a790812ae05120a20f0cf49cd07b ffffffffffffffffffffffffffffffff 102 /Users/stacie/dev/ipad/dicecup/build/Debug-iphoneos/dicecup.app.dSYM
+8ebebe2792292c6db3d3d87e16f8a8a6 3647b7fac50bfa3157043d38c0958f95 ffffffffffffffffffffffffffffffff 374 /Users/stacie/dev/ipad/dicecup/build/Debug-iphoneos/dicecup.app
+00000000000000000000000000000000 6a9b0d13a168914c6aa57756968f9d1f ffffffffffffffffffffffffffffffff 7295 /Users/stacie/dev/ipad/dicecup/build/Debug-iphoneos/dicecup.app/embedded.mobileprovision
+037b92e0723b149c5e71a97ee6528735 7bd1917c0a622dfb5117fe72d708e061 ffffffffffffffffffffffffffffffff 28256 /Users/stacie/dev/ipad/dicecup/build/Debug-iphoneos/dicecup.app/dicecup
+000000004bca108b000000000000146a 23cec2e0fed35cb90ffa3d027bb8c844 ffffffffffffffffffffffffffffffff 8388792 /var/folders/TJ/TJq2AQorEziAH524fctfKk+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/dicecup_Prefix-gsuiwedgdlehpadvkgtfavsxugcl/dicecup_Prefix.pch.gch
+000000004bca26500000000000003b12 a736774880bb1196c20d6b1c7fbad173 ffffffffffffffffffffffffffffffff 1165 /Users/stacie/dev/ipad/dicecup/build/Debug-iphoneos/dicecup.app/dicecupViewController.nib
+000000004bca251e000000000000264c 4affa7312c002a747b306568df22eb15 ffffffffffffffffffffffffffffffff 1510 /Users/stacie/dev/ipad/dicecup/build/Debug-iphoneos/dicecup.app/MainWindow.nib
+00000000000000000000000000000000 0b36e337ae0151d4fd6f6910a3249dd0 ffffffffffffffffffffffffffffffff 8 /Users/stacie/dev/ipad/dicecup/build/Debug-iphoneos/dicecup.app/PkgInfo
+00000000000000000000000000000000 0b36e337ae0151d4fd6f6910a3249dd0 ffffffffffffffffffffffffffffffff 687 /Users/stacie/dev/ipad/dicecup/build/Debug-iphoneos/dicecup.app/Info.plist
+00000000000000000000000000000000 714660d1e7a3bcea6f2df65011b575d5 ffffffffffffffffffffffffffffffff 485 /Users/stacie/dev/ipad/dicecup/build/Debug-iphoneos/dicecup.app/ResourceRules.plist
+0b36e337ae0151d4fd6f6910a3249dd0 b800649978c97c33accf9b5c12639c23 ffffffffffffffffffffffffffffffff 320 /Users/stacie/dev/ipad/dicecup/build/dicecup.build/Debug-iphoneos/dicecup.build/dicecup.xcent
+000000004bca322a0000000000001a6d 400403dcab429dee3cb08395ac7e433c ffffffffffffffffffffffffffffffff 8958612 /var/folders/TJ/TJq2AQorEziAH524fctfKk+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/dicecup_Prefix-fvfaiodzilpxgzeotfawjnkwmtso/dicecup_Prefix.pch.gch
