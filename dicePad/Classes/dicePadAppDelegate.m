@@ -18,6 +18,7 @@
 @synthesize peerLabel;
 @synthesize currentPeerID;
 @synthesize thePeers;
+@synthesize diceImageView;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 
@@ -27,11 +28,15 @@
     peerLabel = [[UILabel alloc] initWithFrame:frame];
 	[peerLabel setFont:[UIFont fontWithName:@"Arial" size:36]];
 	[peerLabel setBackgroundColor:[UIColor greenColor]];
-    peerLabel.text = [NSString stringWithFormat:@"The peer count is: %d",peerCount];
+    peerLabel.text = [NSString stringWithFormat:@"%d player(s) so far",peerCount];
     [viewController.view addSubview:peerLabel];
+
+	CGRect frame2 = CGRectMake(200,200, 57,57);
+    diceImageView = [[UIImageView alloc] initWithFrame:frame2];
+	[diceImageView setImage:[UIImage imageNamed:@"1.png"]];
+	[viewController.view addSubview:diceImageView];
+
     
-    
-    // Override point for customization after app launch  
     [viewController.view setBackgroundColor:[UIColor greenColor]];
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
@@ -40,10 +45,36 @@
     myGkSession.available = YES;
     myGkSession.delegate = self;
     NSLog(@"in session beginning");
+	
+	[self animateDice];
+		
 //	return [myGkSession retain]; // peer picker retains a reference, so autorelease ours so we don't leak.
     return YES;
 }
 
+
+- (void)animateDice {
+	
+	UIImage *img1 = [UIImage imageNamed:@"1.png"]; 
+	UIImage *img2 = [UIImage imageNamed:@"2.png"];
+	UIImage *img3 = [UIImage imageNamed:@"3.png"];
+	UIImage *img4 = [UIImage imageNamed:@"4.png"];
+	UIImage *img5 = [UIImage imageNamed:@"5.png"];
+	UIImage *img6 = [UIImage imageNamed:@"6.png"];
+
+	
+	
+	NSArray *iArray = [[NSArray alloc] initWithObjects:img2, img3, img1, img5, img6, img3, img4, img5, nil];
+	
+	diceImageView.animationImages = iArray;
+	diceImageView.animationDuration = 2;
+	diceImageView.animationRepeatCount = 3;
+	
+	[diceImageView startAnimating ];
+	[viewController.view addSubview:diceImageView];
+	
+	
+}
 
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID{
     NSLog(@"in did receive conn from peer, %@", peerID);
@@ -66,14 +97,15 @@
         case GKPeerStateConnected:
             NSLog(@"didChangeState State CONNECTED");
             peerCount++;
-            peerLabel.text = [NSString stringWithFormat:@"peer count: %d, peerID: %@",peerCount, peerID];
+            peerLabel.text = [NSString stringWithFormat:@"%d player(s) so far",peerCount, peerID];
             // Record the peerID of the other peer.
             // Inform your game that a peer has connected.
+			[self animateDice];
             break;
         case GKPeerStateDisconnected:
             NSLog(@"didChangeState State DISCONNECTED");
             peerCount--;
-            peerLabel.text = [NSString stringWithFormat:@"peer count: %d, peerID is %@",peerCount, peerID];
+            peerLabel.text = [NSString stringWithFormat:@"%d player(s) so far",peerCount, peerID];
             // Inform your game that a peer has left.
             break;
     }
