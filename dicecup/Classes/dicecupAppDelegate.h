@@ -13,14 +13,12 @@
 
 @interface dicecupAppDelegate : NSObject <UIApplicationDelegate, GKPeerPickerControllerDelegate, GKSessionDelegate, UIAlertViewDelegate> {
     UIWindow *window;
-    dicecupViewController *viewController;
     GKSession		*myGkSession;
     NSMutableArray  *myPeers;
 
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet dicecupViewController *viewController;
 @property (nonatomic, retain) GKSession	 *myGkSession;
 @property (nonatomic, retain) NSMutableArray *myPeers;
 
