@@ -7,12 +7,10 @@
 //
 
 #import "dicecupAppDelegate.h"
-#import "dicecupViewController.h"
 
 @implementation dicecupAppDelegate
 
 @synthesize window;
-@synthesize viewController;
 @synthesize myGkSession;
 @synthesize myPeers;
 //@synthesize gameState, peerStatus, gameSession, gamePeerId, lastHeartbeatDate, connectionAlert;
@@ -20,10 +18,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-		
-    [window addSubview:viewController.view];
+	UIImageView *dicecupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dicecup.png"]];
+    [window addSubview:dicecupImageView];
     [window makeKeyAndVisible];
     [self startPicker];
+	[dicecupImageView release];
     
 	return YES;
 }
@@ -176,7 +175,7 @@
 }
 
 - (void)dealloc {
-    [viewController release];
+//    [viewController release];
     [window release];
     [super dealloc];
 }
