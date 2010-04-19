@@ -19,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 	UIImageView *dicecupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dicecup.png"]];
-    [window addSubview:dicecupImageView];
+	[window addSubview:dicecupImageView];
     [window makeKeyAndVisible];
     [self startPicker];
 	[dicecupImageView release];
