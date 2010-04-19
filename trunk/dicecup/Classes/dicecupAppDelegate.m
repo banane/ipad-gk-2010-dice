@@ -15,9 +15,26 @@
 @synthesize myPeers;
 //@synthesize gameState, peerStatus, gameSession, gamePeerId, lastHeartbeatDate, connectionAlert;
 
+- (void) testingDice{
+//		we'll put this in the senddata (or similar method), but until then testing the array.
 
+	int d1 = [self randDiceInt];
+	int d2 = [self randDiceInt];
+	NSArray *diceValues = [[NSArray alloc] initWithObjects: [NSNumber numberWithInt:d1], [NSNumber numberWithInt:d2], nil];
+	NSLog(@"these are the dice values: %@", diceValues);
+	
+}
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+- (int)randDiceInt{
+	// put in more secure randomizer if you want
+	int diceInt = random() % 7;
+	NSLog(@"the random #: %d", diceInt);
+	return diceInt;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    	
+	[self testingDice];
+	
 	UIImageView *dicecupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dicecup.png"]];
 	[window addSubview:dicecupImageView];
     [window makeKeyAndVisible];
@@ -66,7 +83,8 @@
 - (void)peerPickerController:(GKPeerPickerController *)picker didConnectPeer:(NSString *)peerID toSession:(GKSession *)sess { 
 	// Remember the current peer.
 	//self.gamePeerId = peerID;  // copy
-	[myPeers addObject:peerID];
+	// why are we creating a peer Array in the client? thought this would be a server thing.
+//	[myPeers addObject:peerID];
     
 	// Done with the Peer Picker so dismiss it.
 	[picker dismiss];
@@ -135,6 +153,9 @@
  */
 - (BOOL)sendData:(NSData *) data toPeers:(NSArray *)peers withDataMode:(GKSendDataMode)mode error:(NSError **)error{
     NSLog(@"INSIDE: sendData to peers");
+	
+	// now we can pass dicevalues to server!
+	
     return YES;
 }
 
