@@ -24,18 +24,22 @@
 
     peerCount = 0;
     
-    CGRect frame = CGRectMake(150,200, 450,450);
+    CGRect frame = CGRectMake(150,50, 450,50);
     peerLabel = [[UILabel alloc] initWithFrame:frame];
 	[peerLabel setFont:[UIFont fontWithName:@"Arial" size:36]];
 	[peerLabel setBackgroundColor:[UIColor greenColor]];
     peerLabel.text = [NSString stringWithFormat:@"%d player(s) so far",peerCount];
     [viewController.view addSubview:peerLabel];
 
-	CGRect frame2 = CGRectMake(200,200, 57,57);
+	CGRect frame2 = CGRectMake(200,200, 100,100);
     diceImageView = [[UIImageView alloc] initWithFrame:frame2];
-	[diceImageView setImage:[UIImage imageNamed:@"1.png"]];
+	[diceImageView setImage:[UIImage imageNamed:@"2.png"]];
 	[viewController.view addSubview:diceImageView];
 
+ 	CGRect frame3 = CGRectMake(350,200, 100,100);
+    diceImageView2 = [[UIImageView alloc] initWithFrame:frame3];
+	[diceImageView2 setImage:[UIImage imageNamed:@"5.png"]];
+	[viewController.view addSubview:diceImageView2];
     
     [viewController.view setBackgroundColor:[UIColor greenColor]];
     [window addSubview:viewController.view];
@@ -46,7 +50,7 @@
     myGkSession.delegate = self;
     NSLog(@"in session beginning");
 	
-	[self animateDice];
+	//[self animateDice];
 		
 //	return [myGkSession retain]; // peer picker retains a reference, so autorelease ours so we don't leak.
     return YES;
@@ -65,14 +69,21 @@
 	
 	
 	NSArray *iArray = [[NSArray alloc] initWithObjects:img2, img3, img1, img5, img6, img3, img4, img5, nil];
+	NSArray *iArray2 = [[NSArray alloc] initWithObjects:img5, img1, img2, img6, img1, img3, img2, img4, nil];
 	
 	diceImageView.animationImages = iArray;
 	diceImageView.animationDuration = 2;
-	diceImageView.animationRepeatCount = 3;
+	diceImageView.animationRepeatCount = 1;
 	
 	[diceImageView startAnimating ];
-	[viewController.view addSubview:diceImageView];
+	//[viewController.view addSubview:diceImageView];
+
+    diceImageView2.animationImages = iArray2;
+	diceImageView2.animationDuration = 2;
+	diceImageView2.animationRepeatCount = 1;
 	
+	[diceImageView2 startAnimating ];
+    
 	
 }
 

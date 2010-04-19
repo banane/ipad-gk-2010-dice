@@ -20,6 +20,7 @@
     NSMutableArray *thePeers;
     GKSession *myGkSession;
 	UIImageView *diceImageView;
+	UIImageView *diceImageView2;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
