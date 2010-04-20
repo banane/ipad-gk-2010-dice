@@ -11,16 +11,20 @@
 
 @class dicecupViewController;
 
-@interface dicecupAppDelegate : NSObject <UIApplicationDelegate, GKPeerPickerControllerDelegate, GKSessionDelegate, UIAlertViewDelegate> {
+@interface dicecupAppDelegate : NSObject <UIApplicationDelegate, GKPeerPickerControllerDelegate, GKSessionDelegate, UIAlertViewDelegate, UIAccelerometerDelegate> {
     UIWindow *window;
     GKSession		*myGkSession;
     NSMutableArray  *myPeers;
+	UIAccelerometer *accelerometer;
+	UIView *shakeView;
 
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) GKSession	 *myGkSession;
 @property (nonatomic, retain) NSMutableArray *myPeers;
+@property (nonatomic, retain) UIAccelerometer *accelerometer;
+@property (nonatomic, retain) UIView *shakeView;
 
 -(void)startPicker;
 
