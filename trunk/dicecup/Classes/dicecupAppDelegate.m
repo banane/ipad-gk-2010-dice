@@ -13,7 +13,8 @@
 @synthesize window;
 @synthesize myGkSession;
 @synthesize myPeers;
-//@synthesize gameState, peerStatus, gameSession, gamePeerId, lastHeartbeatDate, connectionAlert;
+@synthesize shakeView;
+@synthesize accelerometer;
 
 - (void) testingDice{
 //		we'll put this in the senddata (or similar method), but until then testing the array.
@@ -38,11 +39,26 @@
 	UIImageView *dicecupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dicecup.png"]];
 	[window addSubview:dicecupImageView];
     [window makeKeyAndVisible];
-    [self startPicker];
-	[dicecupImageView release];
+//    [self startPicker];
+	
+	//Configure and start accelerometer
+	self.accelerometer = [UIAccelerometer sharedAccelerometer];
+	self.accelerometer.updateInterval = .1;
+	self.accelerometer.delegate = self;
+	
+	[dicecupImageView release];	
     
 	return YES;
 }
+
+- (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration
+{
+	if ((acceleration.x > 1) || (acceleration.y > 1) || (acceleration.z > 1)){
+		//this was sent with some force- a dice throw
+		[self startPicker];		
+	}
+}
+
 -(void)startPicker {
 	GKPeerPickerController *picker = [[GKPeerPickerController alloc] init]; // note: picker is released in various picker delegate methods when picker use is done.
     //picker.GKPeerPickerConnectionType = GKPeerPickerConnectionTypeOnline;
