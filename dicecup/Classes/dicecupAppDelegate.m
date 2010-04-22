@@ -2,8 +2,9 @@
 //  dicecupAppDelegate.m
 //  dicecup
 //
-//  Created by stacie on 4/17/10.
-//  Copyright __MyCompanyName__ 2010. All rights reserved.
+//
+//  Created by stacie hibino and anna billstrom on 4/17/10.
+//  Copyright stacie and anna 2010. MIT License
 //
 
 #import "dicecupAppDelegate.h"
@@ -15,19 +16,14 @@
 @synthesize myPeers;
 @synthesize shakeView;
 @synthesize accelerometer;
-@synthesize canShake;
+@synthesize shakeable;
 @synthesize diceValues;
 
 
 - (void)rollDice{
-	int di1 = [self getDi];
-	int di2 = [self getDi];
+	int di1 = (arc4random() % 7) + 1;
+	int di2 = (arc4random() % 7) + 1;
 	diceValues = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:di1], [NSNumber numberWithInt:di2], nil];
-}
-
-- (NSInteger)getDi{
-	int di = (arc4random() % 7) + 1;
-	return di;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    	
@@ -37,7 +33,9 @@
 		
     [window makeKeyAndVisible];
 	
+	
 	//Configure and start accelerometer
+	shakeable = NO; // don't interpret shakes until connection made
 	self.accelerometer = [UIAccelerometer sharedAccelerometer];
 	self.accelerometer.updateInterval = .1;
 	self.accelerometer.delegate = self;
@@ -59,7 +57,7 @@
 
 - (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration
 {
-	if (canShake == YES){
+	if (shakeable){
 		if ((acceleration.x > 1) || (acceleration.y > 1) || (acceleration.z > 1)){
 			// send data
 			// diceValues = [self rollDice];
@@ -223,7 +221,7 @@
             // Connection was accepted
             myGkSession = session;
             myGkSession.delegate = self;
-			canShake = YES; // shake motions will be valid now
+			shakeable = YES; // shake motions will be valid now
 			break;				
 		case GKPeerStateDisconnected:
             NSLog(@"GKPeerStateDisconnected: %@", session);
