@@ -15,29 +15,26 @@
 @synthesize myPeers;
 @synthesize shakeView;
 @synthesize accelerometer;
+@synthesize canShake;
+@synthesize diceValues;
 
-- (void) testingDice{
-//		we'll put this in the senddata (or similar method), but until then testing the array.
 
-	int d1 = [self randDiceInt];
-	int d2 = [self randDiceInt];
-	NSArray *diceValues = [[NSArray alloc] initWithObjects: [NSNumber numberWithInt:d1], [NSNumber numberWithInt:d2], nil];
-	NSLog(@"these are the dice values: %@", diceValues);
-	
+- (void)rollDice{
+	int di1 = [self getDi];
+	int di2 = [self getDi];
+	diceValues = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:di1], [NSNumber numberWithInt:di2], nil];
 }
 
-- (int)randDiceInt{
-	// put in more secure randomizer if you want
-	int diceInt = random() % 7;
-	NSLog(@"the random #: %d", diceInt);
-	return diceInt;
+- (NSInteger)getDi{
+	int di = (arc4random() % 7) + 1;
+	return di;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    	
-	[self testingDice];
 	
 	UIImageView *dicecupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dicecup.png"]];
 	[window addSubview:dicecupImageView];
+		
     [window makeKeyAndVisible];
 	
 	//Configure and start accelerometer
@@ -62,10 +59,12 @@
 
 - (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration
 {
-//	if ((acceleration.x > 1) || (acceleration.y > 1) || (acceleration.z > 1)){
-		//this was sent with some force- a dice throw
-//		[self startPicker];		
-	//}
+	if (canShake == YES){
+		if ((acceleration.x > 1) || (acceleration.y > 1) || (acceleration.z > 1)){
+			// send data
+			// diceValues = [self rollDice];
+		}
+	}
 }
 
 -(void)startPicker {
@@ -224,6 +223,7 @@
             // Connection was accepted
             myGkSession = session;
             myGkSession.delegate = self;
+			canShake = YES; // shake motions will be valid now
 			break;				
 		case GKPeerStateDisconnected:
             NSLog(@"GKPeerStateDisconnected: %@", session);
@@ -270,7 +270,11 @@
 
 
 - (void)dealloc {
-//    [viewController release];
+	[diceValues release];
+	[accelerometer release];
+	[myGkSession release];
+	[myPeers release];
+
     [window release];
     [super dealloc];
 }

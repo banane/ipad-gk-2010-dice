@@ -15,8 +15,12 @@
     UIWindow *window;
     GKSession		*myGkSession;
     NSMutableArray  *myPeers;
+	
 	UIAccelerometer *accelerometer;
 	UIView *shakeView;
+	BOOL canShake;
+
+	NSArray *diceValues;
 
 }
 
@@ -25,8 +29,12 @@
 @property (nonatomic, retain) NSMutableArray *myPeers;
 @property (nonatomic, retain) UIAccelerometer *accelerometer;
 @property (nonatomic, retain) UIView *shakeView;
+@property (nonatomic) BOOL canShake;
+@property (nonatomic, retain) NSArray *diceValues;
 
 -(void)startPicker;
+-(void)rollDice;
+-(int)Di;
 
 @end
 
