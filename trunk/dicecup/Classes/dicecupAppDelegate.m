@@ -39,7 +39,6 @@
 	UIImageView *dicecupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dicecup.png"]];
 	[window addSubview:dicecupImageView];
     [window makeKeyAndVisible];
-//    [self startPicker];
 	
 	//Configure and start accelerometer
 	self.accelerometer = [UIAccelerometer sharedAccelerometer];
@@ -48,15 +47,25 @@
 	
 	[dicecupImageView release];	
     
+    [self startPicker];
 	return YES;
+}
+- (void)applicationWillTerminate:(UIApplication *)application {
+	if (myGkSession) {
+		[myGkSession disconnectFromAllPeers];
+		myGkSession.available = NO;
+		[myGkSession setDataReceiveHandler: nil withContext: nil];
+		myGkSession.delegate = nil;
+		[myGkSession release];
+	}
 }
 
 - (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration
 {
-	if ((acceleration.x > 1) || (acceleration.y > 1) || (acceleration.z > 1)){
+//	if ((acceleration.x > 1) || (acceleration.y > 1) || (acceleration.z > 1)){
 		//this was sent with some force- a dice throw
-		[self startPicker];		
-	}
+//		[self startPicker];		
+	//}
 }
 
 -(void)startPicker {
@@ -78,12 +87,16 @@
         NSLog(@"in peerPickerController sessionForConnectionType: ONLINE");
     else
         NSLog(@"in peerPickerController sessionForConnectionType: NEARBY");
-	myGkSession = [[GKSession alloc] initWithSessionID:@"DicePad" displayName:nil sessionMode:GKSessionModePeer]; 
-    myGkSession.delegate = self;
-    //myGkSession.available = YES;
-	return [myGkSession retain]; // peer picker retains a reference, so autorelease ours so we don't leak.
+
+    // peer picker retains a reference, so autorelease ours so we don't leak.
+	//GKSession *sess = [[[GKSession alloc] initWithSessionID:@"DicePad" displayName:nil sessionMode:GKSessionModePeer] autorelease]; 
+	GKSession *sess = [[GKSession alloc] initWithSessionID:@"DicePad" displayName:nil sessionMode:GKSessionModePeer]; 
+    sess.delegate = self;
+    [sess setDataReceiveHandler:self withContext:nil];
+	return sess; 
 }
 
+// do we need this?
 - (void)peerPickerController:(GKPeerPickerController *)picker didSelectConnectionType:(GKPeerPickerConnectionType)type {
     if(type == GKPeerPickerConnectionTypeOnline) {
         [picker dismiss];
@@ -108,9 +121,9 @@
 	[picker autorelease];
 
 	// Make sure we have a reference to the game session and it is set up
-    //NSLog(@"in peerPickerController didConnectPeer");
-	myGkSession = sess; // retain
-    myGkSession.delegate = self;
+    NSLog(@"in peerPickerController didConnectPeer");
+	//myGkSession = sess; // retain
+    //myGkSession.delegate = self;
 
     
     //NSError *error = nil;
@@ -155,8 +168,6 @@
 } 
 
 
-//- (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID;
-
 - (void)connectToPeer:(NSString *)peerID withTimeout:(NSTimeInterval)timeout{
 }
 
@@ -164,7 +175,24 @@
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID{
     NSLog(@"in conn request");
 }
-    
+
+/* Indicates a connection error occurred with a peer, which includes connection request failures, or disconnects due to timeouts.
+ */
+- (void)session:(GKSession *)session connectionWithPeerFailed:(NSString *)peerID withError:(NSError *)error {
+	UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"session connectionWithPeerFailed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	[a show];
+	[a release];
+}
+
+/* Indicates an error occurred with the session such as failing to make available.
+ */
+- (void)session:(GKSession *)session didFailWithError:(NSError *)error {
+	UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"session connectionWithPeerFailed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	[a show];
+	[a release];
+}
+
+
 /* Asynchronous delivery of data to one or more peers.  Returns YES if delivery started, NO if unable to start sending, and error will be set.  Delivery will be reliable or unreliable as set by mode.
  */
 - (BOOL)sendData:(NSData *) data toPeers:(NSArray *)peers withDataMode:(GKSendDataMode)mode error:(NSError **)error{
@@ -181,35 +209,65 @@
     NSLog(@"in didChangeState");
 	switch (state) { 
 		case GKPeerStateAvailable:
+            NSLog(@"GKPeerStateAvailable: %@", session);
             [myGkSession connectToPeer:peerID withTimeout:100.0];
             // A peer became available by starting app, exiting settings, or ending a call.
-			//if (![peerList containsObject:peerID]) {
-			//	[peerList addObject:peerID]; 
-			//}
- 			//[lobbyDelegate peerListDidChange:self]; 
 			break;
 		case GKPeerStateUnavailable:
+            NSLog(@"GKPeerStateUnavailable: %@", session);
             // Peer unavailable due leaving app, or entering settings.
             //[peerList removeObject:peerID]; 
             //[lobbyDelegate peerListDidChange:self]; 
 			break;
 		case GKPeerStateConnected:
+            NSLog(@"GKPeerStateConnected: %@", session);
             // Connection was accepted
-            //currentConfPeerID = [peerID retain];
-            //session.available = NO;
-            //sessionState = ConnectionStateConnected;
+            myGkSession = session;
+            myGkSession.delegate = self;
 			break;				
 		case GKPeerStateDisconnected:
+            NSLog(@"GKPeerStateDisconnected: %@", session);
+            myGkSession = nil;
             //[peerList removeObject:peerID]; 
             //[lobbyDelegate peerListDidChange:self];
 			break;
         case GKPeerStateConnecting:
+            NSLog(@"GKPeerStateConnecting: %@", session);
             // Peer is attempting to connect to the session.
             break;
 		default:
 			break;
 	}
 }
+
+-(void) receiveData:(NSData *)data fromPeer:(NSString *)peerId inSession:(GKSession *)session context:(id)context {
+    
+    NSString *command = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	NSArray *argv = [command componentsSeparatedByString:@"|"];
+	
+	if ([command isEqualToString:@"YourTurn"]) {
+		//[controlsViewController playerDidTakeDamage];
+	}
+	
+	NSLog(@"command: %@",[argv objectAtIndex:0]);
+	
+	SEL selector = NSSelectorFromString([NSString stringWithFormat:@"%@:",[argv objectAtIndex:0]]);
+	if ([self respondsToSelector:selector]) {
+		if (argv.count == 1) {
+			[self performSelector:selector];
+		}
+		if (argv.count == 2) {
+			NSLog(@"args: %@",[argv objectAtIndex:1]);
+			[self performSelector:selector withObject:[argv objectAtIndex:1]];
+		}
+		
+	}
+	else {
+		NSLog(@"PROTOCAL ERROR");
+	}
+	NSLog(@"%@",command);
+}
+
 
 - (void)dealloc {
 //    [viewController release];
