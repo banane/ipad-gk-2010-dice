@@ -12,15 +12,15 @@
 @class dicecupViewController;
 
 @interface dicecupAppDelegate : NSObject <UIApplicationDelegate, GKPeerPickerControllerDelegate, GKSessionDelegate, UIAlertViewDelegate, UIAccelerometerDelegate> {
-    UIWindow *window;
+    UIWindow		*window;
     GKSession		*myGkSession;
     NSMutableArray  *myPeers;
+	NSString		*iPadPeerID;
 	
 	UIAccelerometer *accelerometer;
-	UIView *shakeView;
 	BOOL shakeable;
 
-	NSArray *diceValues;
+	NSMutableArray	*diceValues;
 
 }
 
@@ -28,9 +28,9 @@
 @property (nonatomic, retain) GKSession	 *myGkSession;
 @property (nonatomic, retain) NSMutableArray *myPeers;
 @property (nonatomic, retain) UIAccelerometer *accelerometer;
-@property (nonatomic, retain) UIView *shakeView;
-@property (nonatomic) BOOL shakeable;
-@property (nonatomic, retain) NSArray *diceValues;
+@property (nonatomic) BOOL	shakeable;
+@property (nonatomic, retain) NSMutableArray *diceValues;
+@property (nonatomic, retain) NSString *iPadPeerID;
 
 -(void)startPicker;
 -(void)rollDice;
