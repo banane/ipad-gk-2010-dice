@@ -48,12 +48,22 @@
     myGkSession = [[GKSession alloc] initWithSessionID:@"DicePad" displayName:nil sessionMode:GKSessionModeServer];
     myGkSession.available = YES;
     myGkSession.delegate = self;
+	[myGkSession setDataReceiveHandler:self withContext:nil];
     NSLog(@"in session beginning");
 	
 	//[self animateDice];
 		
-//	return [myGkSession retain]; // peer picker retains a reference, so autorelease ours so we don't leak.
     return YES;
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+	if (myGkSession) {
+		[myGkSession disconnectFromAllPeers];
+		myGkSession.available = NO;
+		[myGkSession setDataReceiveHandler: nil withContext: nil];
+		myGkSession.delegate = nil;
+		[myGkSession release];
+	} 
 }
 
 
