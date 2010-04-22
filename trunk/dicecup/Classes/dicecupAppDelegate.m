@@ -14,35 +14,32 @@
 @synthesize window;
 @synthesize myGkSession;
 @synthesize myPeers;
-@synthesize shakeView;
 @synthesize accelerometer;
 @synthesize shakeable;
 @synthesize diceValues;
+@synthesize iPadPeerID;
 
-
-- (void)rollDice{
-	int di1 = (arc4random() % 7) + 1;
-	int di2 = (arc4random() % 7) + 1;
-	diceValues = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:di1], [NSNumber numberWithInt:di2], nil];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    	
 	
 	UIImageView *dicecupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dicecup.png"]];
-	[window addSubview:dicecupImageView];
-		
+	[window addSubview:dicecupImageView];		
     [window makeKeyAndVisible];
+	diceValues= [[NSMutableArray alloc] initWithCapacity:2];
 	
 	
 	//Configure and start accelerometer
 	shakeable = NO; // don't interpret shakes until connection made
+	
 	self.accelerometer = [UIAccelerometer sharedAccelerometer];
 	self.accelerometer.updateInterval = .1;
 	self.accelerometer.delegate = self;
+
+	NSLog(@"app started- diceValues: %@, shakeable: %d", diceValues, shakeable);
 	
-	[dicecupImageView release];	
-    
     [self startPicker];
+
+	[dicecupImageView release];	
 	return YES;
 }
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -54,16 +51,32 @@
 		[myGkSession release];
 	}
 }
+#pragma mark dice methods
+
+- (void)rollDice{
+	int di1 = (arc4random() % 6) + 1; // check and see if this ever rolls a 12
+	int di2 = (arc4random() % 6) + 1;
+	[diceValues removeAllObjects];
+	[diceValues insertObject:[NSNumber numberWithInt:di1] atIndex:0 ];
+	[diceValues insertObject:[NSNumber numberWithInt:di2] atIndex:1 ];
+	NSLog(@"dice rolled- diceValues: %@, shakeable: %d", diceValues, shakeable);
+}
+
+# pragma mark accelerometer methods
 
 - (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration
 {
 	if (shakeable){
 		if ((acceleration.x > 1) || (acceleration.y > 1) || (acceleration.z > 1)){
-			// send data
-			// diceValues = [self rollDice];
+			[self rollDice];
+			[self sendPacket];
+						
 		}
 	}
 }
+
+
+# pragma mark network methods
 
 -(void)startPicker {
 	GKPeerPickerController *picker = [[GKPeerPickerController alloc] init]; // note: picker is released in various picker delegate methods when picker use is done.
@@ -168,9 +181,9 @@
 - (void)connectToPeer:(NSString *)peerID withTimeout:(NSTimeInterval)timeout{
 }
 
+#pragma mark session methods
 
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID{
-    NSLog(@"in conn request");
 }
 
 /* Indicates a connection error occurred with a peer, which includes connection request failures, or disconnects due to timeouts.
@@ -189,16 +202,6 @@
 	[a release];
 }
 
-
-/* Asynchronous delivery of data to one or more peers.  Returns YES if delivery started, NO if unable to start sending, and error will be set.  Delivery will be reliable or unreliable as set by mode.
- */
-- (BOOL)sendData:(NSData *) data toPeers:(NSArray *)peers withDataMode:(GKSendDataMode)mode error:(NSError **)error{
-    NSLog(@"INSIDE: sendData to peers");
-	
-	// now we can pass dicevalues to server!
-	
-    return YES;
-}
 
 
     
@@ -221,11 +224,15 @@
             // Connection was accepted
             myGkSession = session;
             myGkSession.delegate = self;
+			iPadPeerID = peerID; // assign it to global ivar for senddata
+			NSLog(@"++++++++++++++++++++++++++++++++peerid is: %@", peerID);
+			NSLog(@"and the mypeers is: %@", myPeers);
 			shakeable = YES; // shake motions will be valid now
 			break;				
 		case GKPeerStateDisconnected:
             NSLog(@"GKPeerStateDisconnected: %@", session);
             myGkSession = nil;
+			shakeable = NO;
             //[peerList removeObject:peerID]; 
             //[lobbyDelegate peerListDidChange:self];
 			break;
@@ -236,6 +243,71 @@
 		default:
 			break;
 	}
+}
+
+#pragma mark data methods
+
+
+/* Asynchronous delivery of data to one or more peers.  Returns YES if delivery started, NO if unable to start sending, and error will be set.  Delivery will be reliable or unreliable as set by mode.
+ */
+
+/* // from tank sample code
+ - (BOOL)sendData:(NSData *) data toPeers:(NSArray *)peers withDataMode:(GKSendDataMode)mode error:(NSError **)error{
+ // now we can pass dicevalues to server!
+ return YES;
+ }
+ */
+// from cookbook code sample:
+
++ (void) sendData: (NSData *) data
+{
+	[myGkSession sendDataToPeers:data];
+}
+
+
+// receive dice roll counts? not sure
+
+- (void) sendPacket {
+	NSLog(@"TRYING TO SEND DATA.....	 in sendpacket method");
+/*	static unsigned char networkPacket[1024];
+	const unsigned int packetHeaderSize = 2 * sizeof(int); // we have two "ints" for our header	
+	int *pIntData = (int *)&networkPacket[0];
+	int length = sizeof(diceValues);
+*/
+ //	NSArray *data = diceValues;
+
+	NSString *dataString = @"Umlaut is cute!";
+	NSData *textData = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+	
+
+	NSError *error;
+	BOOL didSend = [myGkSession sendDataToAllPeers:textData withDataMode:GKSendDataReliable error:&error];
+	if(!didSend){
+		NSLog(@"Error sending data to peers: %@",[error localizedDescription]);
+	}
+	if(didSend){
+		NSLog(@"Data sent. YAYAYAYAYAYYAYAYAYAYAYAYYA");
+	}
+	
+	
+	//// header info
+/*	pIntData[0] = 1;    // packet #
+	pIntData[1] = 1;    //packetID;
+	//// copy data in after the header
+	memcpy( &networkPacket[packetHeaderSize], &data, length ); 
+	
+//	NSInteger *length = diceValues.length;
+	NSArray *tmpMyPeers = [[NSArray alloc] initWithObjects:iPadPeerID, nil];
+	NSError *error;
+	NSData *packet = [NSData dataWithBytes: networkPacket length: (length+8)];
+	[myGkSession sendData:packet toPeers:tmpMyPeers withDataMode:GKSendDataReliable error:&error];*/
+/*	if(error){
+		NSLog(@"data sent error was %@", error);
+		NSLog(@"the data was: %@", data);
+		NSLog(@"the peers were: %@", tmpMyPeers);
+	}
+	[tmpMyPeers release];
+ */
 }
 
 -(void) receiveData:(NSData *)data fromPeer:(NSString *)peerId inSession:(GKSession *)session context:(id)context {
