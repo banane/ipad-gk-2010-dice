@@ -68,6 +68,9 @@
 	UIImage *img4 = [UIImage imageNamed:@"4.png"];
 	UIImage *img5 = [UIImage imageNamed:@"5.png"];
 	UIImage *img6 = [UIImage imageNamed:@"6.png"];
+	UIImage *img6_i = [UIImage imageNamed:@"6_i.png"]; // interstitial images to show more movement
+	UIImage *img1_i = [UIImage imageNamed:@"1_i.png"];
+	UIImage *img3_i = [UIImage imageNamed:@"3_i.png"];
 
 	NSArray *diceMaster = [[NSArray alloc] initWithObjects: img1, img2, img3, img4, img5, img6, nil];
 
@@ -81,8 +84,8 @@
 	UIImage *lastImage1 = [diceMaster objectAtIndex:di1];
 	UIImage *lastImage2 = [diceMaster objectAtIndex:di2];
 	
-	NSArray *iArray = [[NSArray alloc] initWithObjects:lastImage1, img2, img3, img1, img5, img6, img3, img4, img5, nil];
-	NSArray *iArray2 = [[NSArray alloc] initWithObjects:lastImage2, img5, img1, img2, img6, img1, img3, img2, img4, nil];
+	NSArray *iArray = [[NSArray alloc] initWithObjects:lastImage1, img2, img3_i, img1, img5, img6_i, img3, img4, img5, nil];
+	NSArray *iArray2 = [[NSArray alloc] initWithObjects:lastImage2, img5, img1_i, img2, img6, img1, img3_i, img2, img4, nil];
 	
 	diceImageView.hidden = NO;
 	diceImageView.animationImages = iArray;
