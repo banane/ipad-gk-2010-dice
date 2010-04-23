@@ -2,18 +2,17 @@
 //  dice1AppDelegate.m
 //  dice1
 //
-//  Created by stacie on 4/17/10.
-//  Copyright __MyCompanyName__ 2010. All rights reserved.
+//  Created by stacie hibino & anna billstrom on 4/17/10.
+//  Copyright stacie & anna 2010. MIT License
 //
 
 
 #import "dicePadAppDelegate.h"
-#import "dicePadViewController.h"
 
 @implementation dicePadAppDelegate
 
 @synthesize window;
-@synthesize viewController;
+@synthesize dicePadViewController;
 @synthesize myGkSession;
 @synthesize peerCount;
 @synthesize peerLabel;
@@ -27,34 +26,34 @@
 
     peerCount = 0;
     
+	dicePadViewController = [[UIViewController alloc] init];
+	
     CGRect frame = CGRectMake(150,50, 450,50);
     peerLabel = [[UILabel alloc] initWithFrame:frame];
 	[peerLabel setFont:[UIFont fontWithName:@"Arial" size:36]];
 	[peerLabel setBackgroundColor:[UIColor greenColor]];
     peerLabel.text = [NSString stringWithFormat:@"%d player(s) so far",peerCount];
-    [viewController.view addSubview:peerLabel];
+    [dicePadViewController.view addSubview:peerLabel];
 
 	CGRect frame2 = CGRectMake(200,200, 100,100);
     diceImageView = [[UIImageView alloc] initWithFrame:frame2];
-//	[diceImageView setImage:[UIImage imageNamed:@"2.png"]];
 	diceImageView.hidden = YES;
-	[viewController.view addSubview:diceImageView];
+	[dicePadViewController.view addSubview:diceImageView];
 
  	CGRect frame3 = CGRectMake(350,200, 100,100);
     diceImageView2 = [[UIImageView alloc] initWithFrame:frame3];
-//	[diceImageView2 setImage:[UIImage imageNamed:@"5.png"]];
 	diceImageView2.hidden = YES;
-	[viewController.view addSubview:diceImageView2];
-    
-    [viewController.view setBackgroundColor:[UIColor greenColor]];
-    [window addSubview:viewController.view];
+	[dicePadViewController.view addSubview:diceImageView2];
+	
+    [dicePadViewController.view setBackgroundColor:[UIColor greenColor]];
+    [window addSubview:dicePadViewController.view];
     [window makeKeyAndVisible];
 
     myGkSession = [[GKSession alloc] initWithSessionID:@"DicePad" displayName:nil sessionMode:GKSessionModeServer];
     myGkSession.available = YES;
     myGkSession.delegate = self;
 			
-//	[self animateDice:2 secondDi:5];
+//	[self animateDice:2 secondDi:5]; // if you want animation on load
     
 	return YES;
 }
@@ -98,7 +97,6 @@
 	diceImageView2.animationRepeatCount = 1;
 	[diceImageView2 startAnimating ];
 	[diceImageView2 setImage:[diceMaster objectAtIndex:di2]];
-    
 	
 }
 
@@ -166,7 +164,7 @@
 }
 
 - (void)dealloc {
-    [viewController release];
+    [dicePadViewController release];
     [window release];
     [super dealloc];
 }
