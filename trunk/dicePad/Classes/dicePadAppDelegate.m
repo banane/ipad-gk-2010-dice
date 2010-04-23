@@ -28,11 +28,13 @@
     
 	dicePadViewController = [[UIViewController alloc] init];
 	
-    CGRect frame = CGRectMake(150,50, 450,50);
-    peerLabel = [[UILabel alloc] initWithFrame:frame];
+    CGRect frame = CGRectMake(100,50, 500,50);
+    peerLabel = [[UITextView alloc] initWithFrame:frame];
+	[peerLabel setTextAlignment:UITextAlignmentCenter];
 	[peerLabel setFont:[UIFont fontWithName:@"Arial" size:36]];
 	[peerLabel setBackgroundColor:[UIColor greenColor]];
-    peerLabel.text = [NSString stringWithFormat:@"%d player(s) so far",peerCount];
+//    peerLabel.text = [NSString stringWithFormat:@"%d player(s) so far",peerCount];
+	peerLabel.text = @"Shake your dice cup to play!";
     [dicePadViewController.view addSubview:peerLabel];
 
 	CGRect frame2 = CGRectMake(200,200, 100,100);
@@ -69,10 +71,10 @@
 	UIImage *img5 = [UIImage imageNamed:@"5.png"];
 	UIImage *img6 = [UIImage imageNamed:@"6.png"];
 	UIImage *img6_i = [UIImage imageNamed:@"6_i.png"]; // interstitial images to show more movement
-	UIImage *img1_i = [UIImage imageNamed:@"1_i.png"];
 	UIImage *img3_i = [UIImage imageNamed:@"3_i.png"];
+	UIImage *img1_i = [UIImage imageNamed:@"1_i.png"];
 
-	NSArray *diceMaster = [[NSArray alloc] initWithObjects: img1, img2, img3, img4, img5, img6, nil];
+	NSArray *diceMaster = [[[NSArray alloc] initWithObjects: img1, img2, img3, img4, img5, img6, nil] retain];
 
 	// index positions start at 0 whereas dice start at 1
 	di1--;
@@ -80,12 +82,11 @@
 	
 	NSLog(@"d1:%d and d2:%d after lowering",di1, di2);
 	
-	// assign incoming peer's di
 	UIImage *lastImage1 = [diceMaster objectAtIndex:di1];
 	UIImage *lastImage2 = [diceMaster objectAtIndex:di2];
 	
-	NSArray *iArray = [[NSArray alloc] initWithObjects:lastImage1, img2, img3_i, img1, img5, img6_i, img3, img4, img5, nil];
-	NSArray *iArray2 = [[NSArray alloc] initWithObjects:lastImage2, img5, img1_i, img2, img6, img1, img3_i, img2, img4, nil];
+	NSArray *iArray = [[[NSArray alloc] initWithObjects:lastImage1, img2, img3_i, img1, img5, img6_i, img3, img4, img5, nil] autorelease];
+	NSArray *iArray2 = [[[NSArray alloc] initWithObjects:lastImage2, img5, img1_i, img2, img6, img1, img3_i, img2, img4, nil] autorelease];
 	
 	diceImageView.hidden = NO;
 	diceImageView.animationImages = iArray;
@@ -100,6 +101,20 @@
 	diceImageView2.animationRepeatCount = 1;
 	[diceImageView2 startAnimating ];
 	[diceImageView2 setImage:[diceMaster objectAtIndex:di2]];
+	
+	[img1 release];
+	[img2 release];
+	[img3 release];
+	[img4 release];
+	[img5 release];
+	[img6 release];
+	[img6_i release];
+	[img1_i release];
+	[img3_i release];
+	[lastImage1 release];
+	[lastImage1 release];
+	
+
 	
 }
 
@@ -167,6 +182,9 @@
 }
 
 - (void)dealloc {
+	[diceImageView release];
+	[diceImageView2 release];
+	[peerLabel release];
     [dicePadViewController release];
     [window release];
     [super dealloc];
