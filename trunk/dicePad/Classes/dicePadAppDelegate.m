@@ -18,8 +18,8 @@
 @synthesize peerLabel;
 @synthesize currentPeerID;
 @synthesize thePeers;
-@synthesize diceImageView;
-
+//@synthesize diceImageView;
+//@synthesize diceImageView2;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
@@ -37,16 +37,7 @@
 	peerLabel.text = @"Shake your dice cup to play!";
     [dicePadViewController.view addSubview:peerLabel];
 
-	CGRect frame2 = CGRectMake(200,200, 100,100);
-    diceImageView = [[UIImageView alloc] initWithFrame:frame2];
-	diceImageView.hidden = YES;
-	[dicePadViewController.view addSubview:diceImageView];
-
- 	CGRect frame3 = CGRectMake(350,200, 100,100);
-    diceImageView2 = [[UIImageView alloc] initWithFrame:frame3];
-	diceImageView2.hidden = YES;
-	[dicePadViewController.view addSubview:diceImageView2];
-	
+		
     [dicePadViewController.view setBackgroundColor:[UIColor greenColor]];
     [window addSubview:dicePadViewController.view];
     [window makeKeyAndVisible];
@@ -56,6 +47,8 @@
     myGkSession.delegate = self;
 			
 //	[self animateDice:2 secondDi:5]; // if you want animation on load
+	
+
     
 	return YES;
 }
@@ -63,6 +56,17 @@
 # pragma mark animation
 
 - (void)animateDice:(int)di1 secondDi:(int)di2 {
+	
+	CGRect frame2 = CGRectMake(200,200, 100,100);
+    UIImageView *diceImageView = [[[UIImageView alloc] initWithFrame:frame2] autorelease];
+//	diceImageView.hidden = YES;
+	[dicePadViewController.view addSubview:diceImageView];
+	
+ 	CGRect frame3 = CGRectMake(350,200, 100,100);
+    UIImageView *diceImageView2 = [[[UIImageView alloc] initWithFrame:frame3] autorelease];
+//	diceImageView2.hidden = YES;
+	[dicePadViewController.view addSubview:diceImageView2];
+	
 	
 	UIImage *img1 = [UIImage imageNamed:@"1.png"]; 
 	UIImage *img2 = [UIImage imageNamed:@"2.png"];
@@ -114,7 +118,7 @@
 	[lastImage1 release];
 	[lastImage1 release];
 	
-
+	[diceMaster release];
 	
 }
 
@@ -165,11 +169,11 @@
 	
 	NSString *errorDesc = nil;
 	NSPropertyListFormat format;
-	NSArray * rolledDice = (NSArray *)[NSPropertyListSerialization
+	NSArray * rolledDice = (NSArray *)[[NSPropertyListSerialization
 										  propertyListFromData:data
 										  mutabilityOption:NSPropertyListMutableContainersAndLeaves
 										  format:&format
-										  errorDescription:&errorDesc];
+										  errorDescription:&errorDesc] autorelease];
 	NSLog(@"rolledDice: %@ ", rolledDice);
 		
 	int di1 = [[rolledDice objectAtIndex:0] intValue];
@@ -178,14 +182,10 @@
 	NSLog(@"di1 %d and di2 %d end of receive method", di1, di2);
 	
 	[self animateDice:di1 secondDi:di2];
-
 }
 
 - (void)dealloc {
-	[diceImageView release];
-	[diceImageView2 release];
-	[peerLabel release];
-    [dicePadViewController release];
+
     [window release];
     [super dealloc];
 }
