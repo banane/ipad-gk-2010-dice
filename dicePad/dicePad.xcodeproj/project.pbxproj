@@ -13,7 +13,6 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		28D7ACF80DDB3853001CB0EB /* dicePadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* dicePadViewController.m */; };
 		9540B572117B9FDF00F949C0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9540B571117B9FDF00F949C0 /* Icon.png */; };
 		9540B5F8117BA6D100F949C0 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9540B5F2117BA6D100F949C0 /* 1.png */; };
 		9540B5F9117BA6D100F949C0 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9540B5F3117BA6D100F949C0 /* 2.png */; };
@@ -32,8 +31,6 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		28D7ACF60DDB3853001CB0EB /* dicePadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dicePadViewController.h; sourceTree = "<group>"; };
-		28D7ACF70DDB3853001CB0EB /* dicePadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dicePadViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* dicePad_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dicePad_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* dicePad-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dicePad-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -67,8 +64,6 @@
 			children = (
 				1D3623240D0F684500981E51 /* dicePadAppDelegate.h */,
 				1D3623250D0F684500981E51 /* dicePadAppDelegate.m */,
-				28D7ACF60DDB3853001CB0EB /* dicePadViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* dicePadViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -191,7 +186,6 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* dicePadAppDelegate.m in Sources */,
-				28D7ACF80DDB3853001CB0EB /* dicePadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

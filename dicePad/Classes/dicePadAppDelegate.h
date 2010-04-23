@@ -9,11 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <GameKit/GameKit.h>
 
-@class dicePadViewController;
-
 @interface dicePadAppDelegate : NSObject <UIApplicationDelegate, GKSessionDelegate> {
     UIWindow *window;
-    dicePadViewController *viewController;
+    UIViewController *dicePadViewController;
     int peerCount;     // # of peers connected
     UILabel *peerLabel; // see info on peerLabel
     NSString *currentPeerID;
@@ -24,7 +22,7 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet dicePadViewController *viewController;
+@property (nonatomic, retain) IBOutlet UIViewController *dicePadViewController;
 @property (nonatomic, retain) IBOutlet UILabel *peerLabel;
 @property (nonatomic, retain) NSMutableArray *thePeers;
 @property (nonatomic, retain) NSString *currentPeerID;
