@@ -32,7 +32,7 @@
 @property (nonatomic, retain) GKSession *myGkSession;
 @property (nonatomic, retain) IBOutlet UIImageView *diceImageView;
 
--(void)animateDice;
+-(void)animateDice:(int)di1 secondDi:(int)di2;
 
 @end
 
